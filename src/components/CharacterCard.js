@@ -1,33 +1,58 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
+import styled from "styled-components";
+
+const StyledDiv = styled.div`
+  margin-top: 2%;
+`;
+
+const StyledImage = styled.img`
+  width: 40%;
+`;
+
+const StyledHeaderTwo = styled.h2`
+  color: #062ad5;
+`;
+
 
 export default function CharacterCard(props) {
   const [char, setChar] = useState([]);
+  let { id } = useParams();
+  // const id = props.match.params.id;
+  
 
   useEffect(() => {
-    const id = props.match.params.id;
+
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
 
        axios
         .get(`https://rickandmortyapi.com/api/character/${id}`)
         .then(response => {
-          setChar(response.data.result);
+          setChar(response.data);
+          console.log(char);
         })
         .catch(error => {
           console.error(error);
         });
 
-  },[]);
+  },[id]);
 
-  const { image, name } = char;
+  const { image, name, status, species, gender, created } = char;
+  console.log(char);
   return (
-    <div>
-    <img src={image}/>
-    <h2>Character's Name: {name}</h2>
-  </div>
-
+    <StyledDiv>
+    <StyledImage src={image}/>
+    <StyledHeaderTwo>Character's Name: {name}</StyledHeaderTwo>
+    <StyledHeaderTwo>Status: {status}</StyledHeaderTwo>
+    <StyledHeaderTwo>Species: {species}</StyledHeaderTwo>
+    <StyledHeaderTwo>Gender: {gender}</StyledHeaderTwo>
+    <StyledHeaderTwo>Created: {created}</StyledHeaderTwo>
+  </StyledDiv>
   );
+
+  
 }
 
 
