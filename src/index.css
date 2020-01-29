@@ -36,9 +36,46 @@ main {
 
 header h1 {
   text-align: center;
+  justify-content: space-between;
+
+  
 }
 
-.Cards {
+.search-form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: -10%;
+  padding-bottom: 2%;
+  margin-top: 1%;
+  margin-bottom: 5%;
+  background-color: #0abcb3;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.form-header {
+  margin-left: 22%;
+  font-size: 35px;
+}
+
+.form {
+  margin-left: 26%;
+  margin-top: -1%;
+}
+
+.input {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 180px;
+  padding-left: 10px;
+  margin-left: 5%;
+
+}
+
+.button {
+  padding: 20px;
+  margin-left: 1%;
+  background-color: #bc5a0a;
+  color: white;
 }

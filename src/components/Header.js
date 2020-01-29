@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const StyledHeaderOne = styled.h1`
   margin-left: -3%;
-  margin-top: 5%;
-  font-size: 40px;
+  margin-top: 4%;
+  font-size: 60px;
   color: #062ad5;
 `;
 

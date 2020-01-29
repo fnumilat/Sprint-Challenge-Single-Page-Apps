@@ -19,7 +19,7 @@ const StyledHeaderTwo = styled.h2`
 export default function CharacterCard(props) {
   const [char, setChar] = useState([]);
   let { id } = useParams();
-  // const id = props.match.params.id;
+
   
 
   useEffect(() => {
